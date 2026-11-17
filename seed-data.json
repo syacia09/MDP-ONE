@@ -1,0 +1,825 @@
+{
+  "lecturers": [
+    {
+      "id": "d1",
+      "name": "Dr. Fajar Nugraha, M.T.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "fajar.nugraha@mdp.example",
+      "expertise": ["Machine Learning", "Computer Vision", "Deep Learning"],
+      "interests": "Pengenalan citra untuk pertanian dan kesehatan, serta model ringan yang dapat berjalan di perangkat edge.",
+      "courses": ["Kecerdasan Buatan", "Pembelajaran Mesin"],
+      "publications": [
+        {
+          "title": "Klasifikasi Penyakit Daun Padi Menggunakan CNN Ringan pada Perangkat Edge",
+          "venue": "Jurnal Informatika Terapan Nusantara",
+          "year": 2026
+        },
+        {
+          "title": "Augmentasi Data Citra Medis dengan Model Generatif",
+          "venue": "Prosiding Seminar Nasional Teknologi Cerdas",
+          "year": 2025
+        },
+        {
+          "title": "Perbandingan Arsitektur Transfer Learning untuk Dataset Kecil",
+          "venue": "Jurnal Sistem Informasi dan Data Terapan",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "d2",
+      "name": "Maya Anggraini, M.Kom.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "maya.anggraini@mdp.example",
+      "expertise": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Text Mining"
+      ],
+      "interests": "Pengolahan bahasa Indonesia dan daerah, analisis sentimen, serta chatbot layanan kampus.",
+      "courses": ["Penambangan Data", "Pengolahan Bahasa Alami"],
+      "publications": [
+        {
+          "title": "Analisis Sentimen Ulasan Layanan Kampus dengan Model Bahasa Pralatih",
+          "venue": "Prosiding Konferensi Komputasi Nusantara",
+          "year": 2026
+        },
+        {
+          "title": "Normalisasi Teks Media Sosial Berbahasa Indonesia Informal",
+          "venue": "Jurnal Informatika Terapan Nusantara",
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "id": "d3",
+      "name": "Hendra Wijaya, M.Kom.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "hendra.wijaya@mdp.example",
+      "expertise": ["UI/UX", "Human-Computer Interaction", "Usability Testing"],
+      "interests": "Desain antarmuka untuk aplikasi pendidikan, aksesibilitas, dan evaluasi kebergunaan sistem akademik.",
+      "courses": ["Pengantar Ilmu Komputer", "Interaksi Manusia dan Komputer"],
+      "publications": [
+        {
+          "title": "Evaluasi Usability Portal Akademik dengan System Usability Scale",
+          "venue": "Jurnal Rekayasa Interaksi Digital",
+          "year": 2026
+        },
+        {
+          "title": "Pola Navigasi Mahasiswa pada Aplikasi Kampus Berbasis Seluler",
+          "venue": "Prosiding Seminar Nasional Teknologi Cerdas",
+          "year": 2025
+        },
+        {
+          "title": "Prinsip Aksesibilitas pada Antarmuka Pembelajaran Daring",
+          "venue": "Jurnal Rekayasa Interaksi Digital",
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "name": "Sari Kusuma, M.Kom.",
+      "title": "Dosen Tetap · Sistem Informasi",
+      "email": "sari.kusuma@mdp.example",
+      "expertise": ["UI/UX", "Digital Literacy", "E-Learning"],
+      "interests": "Riset pengguna, literasi digital mahasiswa baru, dan perancangan pengalaman belajar daring.",
+      "courses": [
+        "Pengantar Literasi Digital",
+        "Perancangan Pengalaman Pengguna"
+      ],
+      "publications": [
+        {
+          "title": "Tingkat Literasi Digital Mahasiswa Baru dan Faktor yang Memengaruhinya",
+          "venue": "Jurnal Sistem Informasi dan Data Terapan",
+          "year": 2026
+        },
+        {
+          "title": "Persona Pengguna untuk Perancangan Platform Belajar Kampus",
+          "venue": "Jurnal Rekayasa Interaksi Digital",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "name": "Citra Lestari, M.Kom.",
+      "title": "Dosen Tetap · Sistem Informasi",
+      "email": "citra.lestari@mdp.example",
+      "expertise": ["Basis Data", "Data Engineering", "Business Intelligence"],
+      "interests": "Perancangan data warehouse, kualitas data, dan dashboard pengambilan keputusan untuk institusi pendidikan.",
+      "courses": ["Basis Data I", "Pergudangan Data"],
+      "publications": [
+        {
+          "title": "Perancangan Data Warehouse untuk Pemantauan Kinerja Akademik",
+          "venue": "Jurnal Sistem Informasi dan Data Terapan",
+          "year": 2025
+        },
+        {
+          "title": "Pengaruh Normalisasi terhadap Kinerja Kueri pada Skala Menengah",
+          "venue": "Prosiding Konferensi Komputasi Nusantara",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "name": "Rina Marlina, M.Kom.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "rina.marlina@mdp.example",
+      "expertise": [
+        "Rekayasa Perangkat Lunak",
+        "Pengembangan Web",
+        "Pengujian Perangkat Lunak"
+      ],
+      "interests": "Metode pengembangan agile, pengujian otomatis, dan pembelajaran pemrograman dasar yang efektif.",
+      "courses": ["Pemrograman Dasar", "Rekayasa Perangkat Lunak"],
+      "publications": [
+        {
+          "title": "Pengaruh Pembelajaran Berbasis Proyek terhadap Kemampuan Pemrograman Dasar",
+          "venue": "Prosiding Seminar Nasional Teknologi Cerdas",
+          "year": 2026
+        },
+        {
+          "title": "Otomatisasi Pengujian Antarmuka Web pada Sistem Informasi Kampus",
+          "venue": "Jurnal Informatika Terapan Nusantara",
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "id": "d7",
+      "name": "Teguh Pratama, M.Kom.",
+      "title": "Dosen Tetap · Teknik Komputer",
+      "email": "teguh.pratama@mdp.example",
+      "expertise": ["Keamanan Siber", "Jaringan Komputer", "Digital Forensics"],
+      "interests": "Deteksi intrusi, keamanan aplikasi web, dan edukasi kesadaran keamanan bagi mahasiswa.",
+      "courses": ["Keamanan Jaringan", "Jaringan Komputer"],
+      "publications": [
+        {
+          "title": "Deteksi Anomali Lalu Lintas Jaringan Kampus dengan Pendekatan Statistik",
+          "venue": "Prosiding Konferensi Komputasi Nusantara",
+          "year": 2025
+        },
+        {
+          "title": "Audit Keamanan Dasar Aplikasi Web Layanan Mahasiswa",
+          "venue": "Jurnal Informatika Terapan Nusantara",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "d8",
+      "name": "Andi Prakoso, M.Si.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "andi.prakoso@mdp.example",
+      "expertise": ["Matematika Komputasi", "Optimasi", "Data Science"],
+      "interests": "Metode numerik, optimasi, dan fondasi matematika untuk analitik data.",
+      "courses": ["Kalkulus I", "Matematika Diskrit"],
+      "publications": [
+        {
+          "title": "Penerapan Gradient Descent Termodifikasi pada Masalah Optimasi Jadwal",
+          "venue": "Jurnal Sistem Informasi dan Data Terapan",
+          "year": 2025
+        }
+      ]
+    },
+    {
+      "id": "d9",
+      "name": "Budi Santoso, M.Si.",
+      "title": "Dosen Tetap · Informatika",
+      "email": "budi.santoso@mdp.example",
+      "expertise": [
+        "Aljabar Linier Terapan",
+        "Machine Learning",
+        "Pengolahan Sinyal"
+      ],
+      "interests": "Dekomposisi matriks untuk sistem rekomendasi dan reduksi dimensi data.",
+      "courses": ["Aljabar Linier", "Statistika"],
+      "publications": [
+        {
+          "title": "Reduksi Dimensi dengan SVD pada Sistem Rekomendasi Mata Kuliah Pilihan",
+          "venue": "Prosiding Seminar Nasional Teknologi Cerdas",
+          "year": 2026
+        },
+        {
+          "title": "Faktorisasi Matriks untuk Data Presensi yang Jarang",
+          "venue": "Jurnal Informatika Terapan Nusantara",
+          "year": 2024
+        }
+      ]
+    }
+  ],
+  "students": [
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [
+        {
+          "id": "imwheqrto10",
+          "title": "API Reservasi Ruang",
+          "desc": "Layanan reservasi dengan validasi bentrok jadwal."
+        }
+      ],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrto9",
+          "title": "Hackathon Smart City",
+          "result": "Juara 1",
+          "year": 2025
+        }
+      ],
+      "npm": "2023310008",
+      "name": "Fikri Maulana",
+      "prodi": "Informatika",
+      "angkatan": 2023,
+      "semester": 7,
+      "headline": "Backend developer · Node.js dan basis data",
+      "about": "Terbiasa membangun REST API dan mengelola basis data. Aktif di hackathon dan terbuka membimbing adik tingkat.",
+      "skills": ["Node.js", "PostgreSQL", "Docker", "REST API"],
+      "interests": ["Backend", "Cloud"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [],
+      "certifications": [
+        {
+          "id": "imwheqrto14",
+          "name": "Data Visualization Associate",
+          "issuer": "Penyedia kursus daring"
+        }
+      ],
+      "competitions": [
+        {
+          "id": "imwheqrto13",
+          "title": "Lomba Business Case Tingkat Nasional",
+          "result": "Semifinalis",
+          "year": 2025
+        }
+      ],
+      "npm": "2023310021",
+      "name": "Sinta Maharani",
+      "prodi": "Sistem Informasi",
+      "angkatan": 2023,
+      "semester": 7,
+      "headline": "Business analyst · visualisasi data",
+      "about": "Menyukai pemodelan proses bisnis dan dashboard. Berpengalaman menyusun kajian kebutuhan untuk proyek kampus.",
+      "skills": ["Power BI", "Business Analysis", "SQL", "UML"],
+      "interests": ["Business Intelligence", "Analisis Sistem"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [
+        {
+          "id": "imwheqrto5",
+          "title": "Prediksi Churn Pelanggan",
+          "desc": "Model klasifikasi dengan gradient boosting dan analisis fitur."
+        }
+      ],
+      "certifications": [
+        {
+          "id": "imwheqrto6",
+          "name": "Machine Learning Fundamentals",
+          "issuer": "Penyedia kursus daring"
+        }
+      ],
+      "competitions": [
+        {
+          "id": "imwheqrto3",
+          "title": "Kompetisi Data Mining Nasional",
+          "result": "Finalis",
+          "year": 2025
+        },
+        {
+          "id": "imwheqrto4",
+          "title": "Hackathon Kampus",
+          "result": "Juara 3",
+          "year": 2025
+        }
+      ],
+      "npm": "2024310012",
+      "name": "Rizky Ramadhan",
+      "prodi": "Informatika",
+      "angkatan": 2024,
+      "semester": 5,
+      "headline": "Machine Learning enthusiast · finalis kompetisi data mining",
+      "about": "Fokus pada analisis data dan model prediktif. Sedang mencari rekan untuk kompetisi data mining berikutnya.",
+      "skills": [
+        "Python",
+        "Machine Learning",
+        "Data Analysis",
+        "TensorFlow",
+        "SQL"
+      ],
+      "interests": ["Data Science", "Machine Learning"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [
+        {
+          "id": "imwheqrto8",
+          "title": "Redesain Aplikasi Pemesanan Kantin",
+          "desc": "Studi kasus lengkap dari riset hingga prototipe berfidelitas tinggi."
+        }
+      ],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrto7",
+          "title": "Lomba UI/UX Design Tingkat Regional",
+          "result": "Juara 1",
+          "year": 2025
+        }
+      ],
+      "npm": "2024310027",
+      "name": "Nadia Safitri",
+      "prodi": "Sistem Informasi",
+      "angkatan": 2024,
+      "semester": 5,
+      "headline": "UI/UX designer · riset pengguna dan prototyping",
+      "about": "Suka mengubah masalah sehari-hari menjadi antarmuka yang mudah dipakai. Berpengalaman melakukan wawancara pengguna dan uji kebergunaan.",
+      "skills": ["Figma", "User Research", "Prototyping", "Design System"],
+      "interests": ["UI/UX", "Riset Pengguna"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrto12",
+          "title": "Lomba Robotik Tingkat Wilayah",
+          "result": "Juara 2",
+          "year": 2025
+        }
+      ],
+      "npm": "2024310033",
+      "name": "Bagas Prasetyo",
+      "prodi": "Teknik Komputer",
+      "angkatan": 2024,
+      "semester": 5,
+      "headline": "IoT dan sistem tertanam",
+      "about": "Suka merakit perangkat dan menghubungkannya ke jaringan. Mencari rekan untuk lomba robotik dan IoT.",
+      "skills": ["ESP32", "Arduino", "C/C++", "MQTT"],
+      "interests": ["IoT", "Robotik"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "closed",
+      "projects": [],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrto15",
+          "title": "Kompetisi Pemrograman Tingkat Wilayah",
+          "result": "Peringkat 12",
+          "year": 2025
+        }
+      ],
+      "npm": "2025310004",
+      "name": "Kevin Wijaya",
+      "prodi": "Informatika",
+      "angkatan": 2025,
+      "semester": 3,
+      "headline": "Competitive programming · algoritma dan struktur data",
+      "about": "Rutin berlatih soal algoritma dan mencari rekan untuk kompetisi pemrograman tim.",
+      "skills": ["C++", "Algoritma", "Struktur Data"],
+      "interests": ["Competitive Programming"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrto11",
+          "title": "Lomba Aplikasi Seluler Tingkat Kampus",
+          "result": "Finalis",
+          "year": 2026
+        }
+      ],
+      "npm": "2025310019",
+      "name": "Dewi Lestari",
+      "prodi": "Informatika",
+      "angkatan": 2025,
+      "semester": 3,
+      "headline": "Mobile developer pemula · Flutter",
+      "about": "Sedang mendalami pengembangan aplikasi seluler dengan Flutter dan ingin membangun tim lomba aplikasi.",
+      "skills": ["Flutter", "Dart", "Firebase"],
+      "interests": ["Mobile Development"]
+    },
+    {
+      "password": "mdp12345",
+      "isPublic": true,
+      "collaboration": "open",
+      "projects": [
+        {
+          "id": "imwheqrto2",
+          "title": "Website Portofolio Pribadi",
+          "desc": "Situs statis responsif dengan HTML dan CSS."
+        }
+      ],
+      "certifications": [],
+      "competitions": [
+        {
+          "id": "imwheqrtn1",
+          "title": "Lomba Desain Poster Digital Tingkat SMA",
+          "result": "Juara 2",
+          "year": 2025
+        }
+      ],
+      "npm": "2026310001",
+      "name": "Alya Putri Rahma",
+      "prodi": "Informatika",
+      "angkatan": 2026,
+      "semester": 1,
+      "headline": "Mahasiswa baru yang suka merancang antarmuka dan belajar web",
+      "about": "Baru mulai kuliah Informatika dan sedang belajar HTML, CSS, serta Python. Tertarik pada desain antarmuka dan ingin ikut lomba pertama di semester ini.",
+      "skills": ["Figma", "HTML/CSS", "Python"],
+      "interests": ["UI/UX", "Pengembangan Web"]
+    }
+  ],
+  "teams": [
+    {
+      "id": "t1",
+      "title": "Data Mining Competition 2027",
+      "organizer": "Panitia Kompetisi Data Mining Nasional",
+      "deadline": "2026-12-30",
+      "authorNpm": "2024310012",
+      "description": "Mencari rekan untuk kompetisi data mining. Target: lolos penyisihan dan menyiapkan model akhir bersama.",
+      "roles": [
+        { "role": "Data Analyst", "count": 1 },
+        { "role": "ML Enthusiast", "count": 1 }
+      ],
+      "skills": ["Python", "Machine Learning", "Data Analysis"],
+      "members": ["2024310012"],
+      "applicants": [],
+      "closed": false,
+      "createdAt": 1794548533598
+    },
+    {
+      "id": "t2",
+      "title": "Hackathon Smart City 2027",
+      "organizer": "Dinas Kota Cerdas (contoh)",
+      "deadline": "2026-12-15",
+      "authorNpm": "2023310008",
+      "description": "Membangun solusi layanan kota berbasis data dalam 48 jam. Sudah ada backend developer, butuh desainer dan mobile developer.",
+      "roles": [
+        { "role": "UI/UX Designer", "count": 1 },
+        { "role": "Mobile Developer", "count": 1 }
+      ],
+      "skills": ["Figma", "Flutter", "REST API"],
+      "members": ["2023310008"],
+      "applicants": [],
+      "closed": false,
+      "createdAt": 1794375733598
+    },
+    {
+      "id": "t3",
+      "title": "Lomba UI/UX Nasional",
+      "organizer": "Himpunan Desain Interaksi (contoh)",
+      "deadline": "2027-01-14",
+      "authorNpm": "2024310027",
+      "description": "Tim 3–4 orang untuk lomba desain aplikasi. Butuh peneliti pengguna dan front-end developer untuk prototipe interaktif.",
+      "roles": [
+        { "role": "UX Researcher", "count": 1 },
+        { "role": "Front-end Developer", "count": 1 }
+      ],
+      "skills": ["User Research", "HTML/CSS", "Figma"],
+      "members": ["2024310027"],
+      "applicants": [],
+      "closed": false,
+      "createdAt": 1794634933598
+    },
+    {
+      "id": "t4",
+      "title": "Kompetisi Robotik dan IoT Kampus",
+      "organizer": "Unit Kegiatan Mahasiswa Robotik (contoh)",
+      "deadline": "2026-12-05",
+      "authorNpm": "2024310033",
+      "description": "Membuat robot pemantau lingkungan berbasis ESP32. Butuh yang paham pemrograman embedded dan perancangan casing 3D.",
+      "roles": [
+        { "role": "Embedded Engineer", "count": 1 },
+        { "role": "Desainer 3D", "count": 1 }
+      ],
+      "skills": ["ESP32", "C/C++", "MQTT"],
+      "members": ["2024310033"],
+      "applicants": [],
+      "closed": false,
+      "createdAt": 1794289333598
+    }
+  ],
+  "chats": {
+    "2024310027|2026310001": {
+      "messages": [
+        {
+          "id": "imwheqrtq16",
+          "from": "2024310027",
+          "text": "Hai Alya! Aku lihat kamu juga suka UI/UX. Mau ikut lomba UI/UX bareng?",
+          "at": 1794717733598
+        }
+      ],
+      "read": {}
+    }
+  },
+  "tenants": [
+    {
+      "id": 1,
+      "name": "Dapur Nusantara",
+      "category": "Makanan berat",
+      "icon": "🍛",
+      "location": "Petak 01",
+      "open": true,
+      "description": "Masakan rumahan dan menu nusantara.",
+      "menus": [
+        {
+          "id": 101,
+          "name": "Nasi Ayam Geprek",
+          "price": 15000,
+          "icon": "🍗",
+          "desc": "Ayam crispy sambal geprek"
+        },
+        {
+          "id": 102,
+          "name": "Nasi Rendang",
+          "price": 18000,
+          "icon": "🍛",
+          "desc": "Rendang sapi dan nasi hangat"
+        },
+        {
+          "id": 103,
+          "name": "Nasi Telur Balado",
+          "price": 12000,
+          "icon": "🍳",
+          "desc": "Telur balado dengan nasi"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mie Corner",
+      "category": "Mie",
+      "icon": "🍜",
+      "location": "Petak 02",
+      "open": true,
+      "description": "Aneka mie dan olahan pedas.",
+      "menus": [
+        {
+          "id": 201,
+          "name": "Mie Goreng Spesial",
+          "price": 14000,
+          "icon": "🍜",
+          "desc": "Mie goreng dengan topping telur"
+        },
+        {
+          "id": 202,
+          "name": "Mie Kuah Pedas",
+          "price": 13000,
+          "icon": "🥘",
+          "desc": "Mie kuah dengan level pedas pilihan"
+        },
+        {
+          "id": 203,
+          "name": "Mie Ayam",
+          "price": 15000,
+          "icon": "🍲",
+          "desc": "Mie ayam pangsit"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Ayam Crispy 88",
+      "category": "Makanan berat",
+      "icon": "🍗",
+      "location": "Petak 03",
+      "open": true,
+      "description": "Ayam crispy dengan pilihan saus.",
+      "menus": [
+        {
+          "id": 301,
+          "name": "Chicken Rice",
+          "price": 16000,
+          "icon": "🍗",
+          "desc": "Ayam crispy dan nasi"
+        },
+        {
+          "id": 302,
+          "name": "Chicken Katsu",
+          "price": 18000,
+          "icon": "🍱",
+          "desc": "Katsu dengan saus spesial"
+        },
+        {
+          "id": 303,
+          "name": "Paket Ayam Sambal",
+          "price": 17000,
+          "icon": "🍚",
+          "desc": "Ayam dan sambal pilihan"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Bebek & Co",
+      "category": "Makanan berat",
+      "icon": "🦆",
+      "location": "Petak 04",
+      "open": false,
+      "description": "Menu bebek dan lauk pilihan.",
+      "menus": [
+        {
+          "id": 401,
+          "name": "Nasi Bebek",
+          "price": 22000,
+          "icon": "🦆",
+          "desc": "Bebek goreng dan nasi"
+        },
+        {
+          "id": 402,
+          "name": "Bebek Sambal Ijo",
+          "price": 23000,
+          "icon": "🍗",
+          "desc": "Bebek dengan sambal ijo"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Kedai Pempek",
+      "category": "Camilan",
+      "icon": "🐟",
+      "location": "Petak 05",
+      "open": true,
+      "description": "Pempek dan makanan khas Palembang.",
+      "menus": [
+        {
+          "id": 501,
+          "name": "Pempek Kapal Selam",
+          "price": 15000,
+          "icon": "🐟",
+          "desc": "Pempek telur dengan cuko"
+        },
+        {
+          "id": 502,
+          "name": "Pempek Lenjer",
+          "price": 10000,
+          "icon": "🥢",
+          "desc": "Pempek lenjer dan cuko"
+        },
+        {
+          "id": 503,
+          "name": "Tekwan",
+          "price": 12000,
+          "icon": "🍲",
+          "desc": "Tekwan kuah hangat"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Fresh Drink",
+      "category": "Minuman",
+      "icon": "🥤",
+      "location": "Petak 06",
+      "open": true,
+      "description": "Minuman segar untuk menemani kuliah.",
+      "menus": [
+        {
+          "id": 601,
+          "name": "Es Teh Lemon",
+          "price": 7000,
+          "icon": "🍋",
+          "desc": "Teh lemon dingin"
+        },
+        {
+          "id": 602,
+          "name": "Mango Yakult",
+          "price": 12000,
+          "icon": "🥭",
+          "desc": "Mangga dan yakult"
+        },
+        {
+          "id": 603,
+          "name": "Es Cokelat",
+          "price": 10000,
+          "icon": "🍫",
+          "desc": "Cokelat susu dingin"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Roti & Toast",
+      "category": "Camilan",
+      "icon": "🍞",
+      "location": "Petak 07",
+      "open": false,
+      "description": "Roti panggang dan camilan manis.",
+      "menus": [
+        {
+          "id": 701,
+          "name": "Roti Cokelat",
+          "price": 9000,
+          "icon": "🍞",
+          "desc": "Roti panggang cokelat"
+        },
+        {
+          "id": 702,
+          "name": "French Toast",
+          "price": 12000,
+          "icon": "🥪",
+          "desc": "Roti panggang manis"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Rice Bowl Lab",
+      "category": "Makanan berat",
+      "icon": "🍱",
+      "location": "Petak 08",
+      "open": true,
+      "description": "Rice bowl praktis untuk mahasiswa.",
+      "menus": [
+        {
+          "id": 801,
+          "name": "Beef Teriyaki Bowl",
+          "price": 20000,
+          "icon": "🍱",
+          "desc": "Daging sapi saus teriyaki"
+        },
+        {
+          "id": 802,
+          "name": "Chicken Mentai",
+          "price": 19000,
+          "icon": "🍗",
+          "desc": "Ayam dengan saus mentai"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Seblak Nyess",
+      "category": "Camilan",
+      "icon": "🥘",
+      "location": "Petak 09",
+      "open": true,
+      "description": "Seblak dengan topping beragam.",
+      "menus": [
+        {
+          "id": 901,
+          "name": "Seblak Original",
+          "price": 12000,
+          "icon": "🥘",
+          "desc": "Kerupuk dan sayuran"
+        },
+        {
+          "id": 902,
+          "name": "Seblak Komplit",
+          "price": 18000,
+          "icon": "🍲",
+          "desc": "Seblak dengan topping komplit"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Coffee Break",
+      "category": "Minuman",
+      "icon": "☕",
+      "location": "Petak 10",
+      "open": true,
+      "description": "Kopi dan minuman untuk teman belajar.",
+      "menus": [
+        {
+          "id": 1001,
+          "name": "Es Kopi Susu",
+          "price": 14000,
+          "icon": "☕",
+          "desc": "Kopi susu gula aren"
+        },
+        {
+          "id": 1002,
+          "name": "Matcha Latte",
+          "price": 16000,
+          "icon": "🍵",
+          "desc": "Matcha latte dingin"
+        }
+      ]
+    }
+  ]
+}

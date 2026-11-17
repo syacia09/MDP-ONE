@@ -1,0 +1,958 @@
+
+/* =========================================
+   SMART CANTEEN — MDP ONE
+   Food-first layout
+   Laptop friendly & responsive
+   Pembayaran dilakukan di kasir
+========================================= */
+
+/* ---------- ROOT ---------- */
+
+.canteen-app {
+  --canteen-primary: #e87935;
+  --canteen-primary-dark: #cf6123;
+  --canteen-primary-light: #fff0e5;
+  --canteen-text: #252525;
+  --canteen-muted: #777;
+  --canteen-border: #eeeeee;
+  --canteen-surface: #ffffff;
+  --canteen-background: #fafafa;
+  --canteen-green: #168653;
+  --canteen-red: #d94b4b;
+
+  display: grid;
+  gap: 24px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0 auto;
+  color: var(--canteen-text);
+  font-family: inherit;
+}
+
+body.dark .canteen-app {
+  --canteen-text: #f1f1f1;
+  --canteen-muted: #aaa;
+  --canteen-border: #343434;
+  --canteen-surface: #242424;
+  --canteen-background: #1b1b1b;
+  --canteen-primary-light: #402b20;
+}
+
+/* ---------- HERO ---------- */
+
+.canteen-app .canteen-hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 190px;
+  padding: 32px 36px;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(255,255,255,.2), transparent 28%),
+    linear-gradient(120deg, #e87935, #f6a34b);
+  color: white;
+}
+
+.canteen-app .canteen-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.canteen-app .canteen-hero .eyebrow {
+  margin: 0 0 10px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  opacity: .85;
+}
+
+.canteen-app .canteen-hero h2 {
+  margin: 0;
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+  color: white;
+}
+
+.canteen-app .canteen-hero p:not(.eyebrow) {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255,255,255,.92);
+}
+
+.canteen-app .canteen-points {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 18px;
+  padding: 8px 13px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 30px;
+  background: rgba(255,255,255,.16);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+
+.canteen-app .canteen-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  align-items: start;
+  gap: 24px;
+  width: 100%;
+  min-width: 0;
+}
+
+.canteen-app .canteen-main {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+.canteen-app .canteen-side {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ---------- SECTION ---------- */
+
+.canteen-app .canteen-section {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 18px;
+  background: var(--canteen-surface);
+}
+
+.canteen-app .canteen-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.canteen-app .canteen-section-heading h2 {
+  margin: 0;
+  color: var(--canteen-text);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.canteen-app .canteen-section-heading p {
+  margin: 5px 0 0;
+  color: var(--canteen-muted);
+  font-size: 12px;
+}
+
+/* ---------- TOOLBAR ---------- */
+
+.canteen-app .canteen-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.canteen-app .canteen-search {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 9px;
+  min-width: 180px;
+  height: 42px;
+  padding: 0 13px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 11px;
+  background: var(--canteen-background);
+}
+
+.canteen-app .canteen-search span {
+  color: var(--canteen-muted);
+  font-size: 21px;
+}
+
+.canteen-app .canteen-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--canteen-text);
+  font: inherit;
+  font-size: 12px;
+}
+
+.canteen-app .canteen-search input::placeholder {
+  color: var(--canteen-muted);
+}
+
+.canteen-app .canteen-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 10px;
+  background: var(--canteen-surface);
+  color: var(--canteen-text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.canteen-app .canteen-chip:hover,
+.canteen-app .canteen-chip.active {
+  border-color: var(--canteen-primary);
+  background: var(--canteen-primary-light);
+  color: var(--canteen-primary);
+}
+
+/* ---------- CATEGORY FILTER ---------- */
+
+.canteen-app .canteen-filter {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  margin-bottom: 18px;
+}
+
+.canteen-app .canteen-filter .canteen-chip {
+  flex-shrink: 0;
+  border-radius: 30px;
+}
+
+/* ---------- FOOD GRID ---------- */
+
+.canteen-app .food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.canteen-app .food-card {
+  overflow: hidden;
+  min-width: 0;
+  border: 1px solid var(--canteen-border);
+  border-radius: 15px;
+  background: var(--canteen-surface);
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.canteen-app .food-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0,0,0,.08);
+}
+
+.canteen-app .food-card-art {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  aspect-ratio: 1.45 / 1;
+  background: var(--canteen-background);
+  color: var(--canteen-muted);
+  font-size: 38px;
+}
+
+.canteen-app .food-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canteen-app .food-card-badge {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: rgba(255,255,255,.94);
+  color: #555;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.canteen-app .food-card-open {
+  position: absolute;
+  right: 9px;
+  bottom: 9px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #e7f7ed;
+  color: #168653;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.canteen-app .food-card-open.closed {
+  background: #ffeded;
+  color: #c34444;
+}
+
+.canteen-app .food-card-body {
+  padding: 12px;
+}
+
+.canteen-app .food-card-body h3 {
+  overflow: hidden;
+  margin: 0 0 7px;
+  color: var(--canteen-text);
+  font-size: 14px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canteen-app .food-tenant {
+  overflow: hidden;
+  color: var(--canteen-muted);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canteen-app .food-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 13px;
+}
+
+.canteen-app .food-card-bottom > b {
+  color: var(--canteen-primary);
+  font-size: 13px;
+}
+
+/* ---------- ADD FOOD BUTTON ---------- */
+
+.canteen-app .add-food-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--canteen-primary);
+  color: white;
+  font-size: 22px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.canteen-app .add-food-button:hover {
+  background: var(--canteen-primary-dark);
+  transform: scale(1.05);
+}
+
+.canteen-app .add-food-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- TENANT LIST ---------- */
+
+.canteen-app .tenant-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.canteen-app .tenant-pill {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 12px;
+  background: var(--canteen-background);
+  color: var(--canteen-text);
+  text-align: left;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.canteen-app .tenant-pill:hover,
+.canteen-app .tenant-pill.active {
+  border-color: var(--canteen-primary);
+  background: var(--canteen-primary-light);
+}
+
+.canteen-app .tenant-pill.closed {
+  opacity: .65;
+}
+
+.canteen-app .pill-info {
+  display: grid;
+  gap: 4px;
+}
+
+.canteen-app .pill-info strong {
+  font-size: 12px;
+}
+
+.canteen-app .pill-info small {
+  color: var(--canteen-muted);
+  font-size: 10px;
+}
+
+/* ---------- TENANT DETAIL ---------- */
+
+.canteen-app .tenant-focus-panel {
+  margin-top: 18px;
+  padding: 17px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 14px;
+  background: var(--canteen-background);
+}
+
+.canteen-app .tenant-focus-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.canteen-app .tenant-focus-top h3 {
+  margin: 0;
+  color: var(--canteen-text);
+  font-size: 17px;
+}
+
+.canteen-app .tenant-focus-top p {
+  margin: 6px 0 0;
+  color: var(--canteen-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.canteen-app .tenant-status {
+  flex-shrink: 0;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.canteen-app .tenant-status.open {
+  background: #e7f7ed;
+  color: #168653;
+}
+
+.canteen-app .tenant-status.closed {
+  background: #ffeded;
+  color: #c34444;
+}
+
+/* ---------- TENANT MENU GRID ---------- */
+
+.canteen-app .menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.canteen-app .menu-item {
+  display: flex;
+  overflow: hidden;
+  min-width: 0;
+  gap: 11px;
+  padding: 10px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 12px;
+  background: var(--canteen-surface);
+}
+
+.canteen-app .menu-food-art {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 82px;
+  min-height: 82px;
+  border-radius: 9px;
+  background: var(--canteen-background);
+  font-size: 27px;
+}
+
+.canteen-app .menu-food-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.canteen-app .menu-food-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.canteen-app .menu-food-info > strong {
+  color: var(--canteen-text);
+  font-size: 12px;
+}
+
+.canteen-app .menu-food-info > small {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 4px;
+  color: var(--canteen-muted);
+  font-size: 10px;
+  line-height: 1.4;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.canteen-app .menu-food-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.canteen-app .menu-food-bottom b {
+  color: var(--canteen-primary);
+  font-size: 11px;
+}
+
+/* ---------- CART ---------- */
+
+.canteen-app .canteen-cart {
+  display: grid;
+  gap: 16px;
+  padding: 10px;
+}
+
+.canteen-app .cart-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.canteen-app .cart-heading h2 {
+  margin: 0;
+  color: var(--canteen-text);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.canteen-app .cart-count {
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: var(--canteen-primary-light);
+  color: var(--canteen-primary);
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.canteen-app .cart-list {
+  display: grid;
+  gap: 13px;
+}
+
+.canteen-app .cart-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--canteen-border);
+}
+
+.canteen-app .cart-row > div:first-child {
+  display: grid;
+  min-width: 0;
+  gap: 4px;
+}
+
+.canteen-app .cart-row strong {
+  overflow: hidden;
+  color: var(--canteen-text);
+  font-size: 11px;
+  text-overflow: ellipsis;
+}
+
+.canteen-app .cart-row small {
+  color: var(--canteen-muted);
+  font-size: 10px;
+}
+
+.canteen-app .cart-quantity {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 9px;
+}
+
+.canteen-app .cart-quantity button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 7px;
+  background: var(--canteen-background);
+  color: var(--canteen-text);
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.canteen-app .cart-quantity button:hover {
+  border-color: var(--canteen-primary);
+  color: var(--canteen-primary);
+}
+
+.canteen-app .cart-quantity span {
+  color: var(--canteen-text);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.canteen-app .cart-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 13px 0;
+  border-top: 1px dashed var(--canteen-border);
+}
+
+.canteen-app .cart-total span {
+  color: var(--canteen-muted);
+  font-size: 10px;
+}
+
+.canteen-app .cart-total strong {
+  color: var(--canteen-primary);
+  font-size: 14px;
+}
+
+/* ---------- CHECKOUT ---------- */
+
+.canteen-app .canteen-checkout {
+  display: grid;
+  gap: 9px;
+}
+
+.canteen-app .canteen-checkout label {
+  margin-top: 3px;
+  color: var(--canteen-text);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.canteen-app .canteen-checkout input,
+.canteen-app .canteen-checkout select {
+  width: 100%;
+  min-width: 0;
+  min-height: 39px;
+  padding: 9px 11px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 9px;
+  outline: none;
+  background: var(--canteen-background);
+  color: var(--canteen-text);
+  font: inherit;
+  font-size: 11px;
+}
+
+.canteen-app .canteen-checkout input:focus,
+.canteen-app .canteen-checkout select:focus {
+  border-color: var(--canteen-primary);
+}
+
+.canteen-app .checkout-button {
+  width: 100%;
+  min-height: 43px;
+  margin-top: 7px;
+  padding: 10px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--canteen-primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.canteen-app .checkout-button:hover {
+  background: var(--canteen-primary-dark);
+}
+
+.canteen-app .checkout-button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ---------- ORDER HISTORY ---------- */
+
+.canteen-app .order-list {
+  display: grid;
+  gap: 12px;
+}
+
+.canteen-app .order-card {
+  min-width: 0;
+  padding: 13px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 12px;
+  background: var(--canteen-background);
+}
+
+.canteen-app .order-card strong {
+  color: var(--canteen-text);
+  font-size: 11px;
+}
+
+.canteen-app .order-card p {
+  margin: 8px 0;
+  color: var(--canteen-muted);
+  font-size: 10px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.canteen-app .order-status {
+  flex-shrink: 0;
+  color: var(--canteen-primary);
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.canteen-app .order-status.done {
+  color: var(--canteen-green);
+}
+
+.canteen-app .order-progress {
+  overflow: hidden;
+  height: 5px;
+  margin-top: 12px;
+  border-radius: 10px;
+  background: var(--canteen-border);
+}
+
+.canteen-app .order-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--canteen-primary);
+  transition: width .3s ease;
+}
+
+.canteen-app .order-progress span.done {
+  background: var(--canteen-green);
+}
+
+.canteen-app .order-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 11px;
+}
+
+.canteen-app .order-actions button {
+  padding: 6px 10px;
+  border: 1px solid var(--canteen-border);
+  border-radius: 7px;
+  background: var(--canteen-surface);
+  color: var(--canteen-red);
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.canteen-app .order-actions button:hover {
+  border-color: var(--canteen-red);
+}
+
+/* ---------- EMPTY STATE ---------- */
+
+.canteen-app .canteen-empty {
+  padding: 22px 12px;
+  border: 1px dashed var(--canteen-border);
+  border-radius: 11px;
+  color: var(--canteen-muted);
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.canteen-app .empty-state {
+  padding: 20px;
+  color: var(--canteen-muted);
+  text-align: center;
+  font-size: 12px;
+}
+
+/* ---------- TOAST ---------- */
+
+.canteen-app .canteen-toast {
+  position: fixed;
+  z-index: 9999;
+  right: 24px;
+  bottom: 24px;
+  max-width: min(360px, calc(100vw - 32px));
+  padding: 13px 18px;
+  border-radius: 11px;
+  background: #252525;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0,0,0,.18);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: .25s ease;
+}
+
+.canteen-app .canteen-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .canteen-app .canteen-layout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 16px;
+  }
+
+  .canteen-app .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .canteen-app .canteen-section {
+    padding: 17px;
+  }
+
+  .canteen-app .menu-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .canteen-app {
+    gap: 16px;
+  }
+
+  .canteen-app .canteen-hero {
+    min-height: auto;
+    padding: 25px 21px;
+    border-radius: 16px;
+  }
+
+  .canteen-app .canteen-hero h2 {
+    font-size: 25px;
+  }
+
+  .canteen-app .canteen-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .canteen-app .canteen-main,
+  .canteen-app .canteen-side {
+    gap: 16px;
+  }
+
+  .canteen-app .canteen-section {
+    padding: 15px;
+    border-radius: 14px;
+  }
+
+  .canteen-app .canteen-section-heading h2 {
+    font-size: 17px;
+  }
+
+  .canteen-app .food-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .canteen-app .food-card-body {
+    padding: 10px;
+  }
+
+  .canteen-app .food-card-body h3 {
+    font-size: 12px;
+  }
+
+  .canteen-app .food-tenant {
+    font-size: 9px;
+  }
+
+  .canteen-app .canteen-toolbar {
+    align-items: stretch;
+  }
+
+  .canteen-app .canteen-search {
+    flex-basis: 100%;
+  }
+
+  .canteen-app .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canteen-app .tenant-focus-top {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .canteen-app .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .canteen-app .canteen-toolbar > select,
+  .canteen-app .canteen-toolbar > button {
+    flex: 1;
+  }
+
+  .canteen-app .food-card-art {
+    aspect-ratio: 1.8 / 1;
+  }
+}
+
+.canteen-app .food-card-art img,
+.canteen-app .menu-food-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

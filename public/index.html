@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MDP ONE — Ekosistem digital Universitas MDP yang menghubungkan akademik, koneksi, dan layanan kampus.">
+  <title>MDP ONE | Campus Experience Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/dashboard.css">
+  <link rel="stylesheet" href="/css/connection.css">
+  <link rel="stylesheet" href="/css/canteen.css">
+  <link rel="stylesheet" href="/css/chat-tenant.css">
+  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" href="/css/cards.css">
+  <link rel="stylesheet" href="/css/dosen.css">
+  <link rel="stylesheet" href="/css/filters.css">
+  <script src="/js/app.js" type="module" defer></script>
+</head>
+<body>
+  <!-- ===================== LOGIN ===================== -->
+  <div class="login-gate" id="loginGate">
+    <section class="login-hero">
+      <a class="brand" href="#" aria-label="MDP ONE">
+        <span class="brand-mark">M</span>
+        <span><strong>MDP ONE</strong><small>Campus experience</small></span>
+      </a>
+      <div class="hero-copy">
+        <h1>Satu pintu untuk akademik, koneksi, dan layanan kampus.</h1>
+        <p>Pantau jadwal dan tugas, temukan rekan lomba, dan hubungi dosen langsung dari satu akun.</p>
+        <ul class="hero-points">
+          <li>Jadwal, tugas, kehadiran, dan tagihan dari SPON dan Simponi</li>
+          <li>Direktori dosen dan mahasiswa berdasarkan keahlian</li>
+          <li>Cari tim lomba dan chat langsung</li>
+        </ul>
+      </div>
+      <div class="hero-people">
+        <div class="avatar-stack" id="heroAvatars" aria-hidden="true"></div>
+        <small>Prototype dengan data fiktif.<br>Dosen (kotak emas) dan mahasiswa (bulat biru).</small>
+      </div>
+    </section>
+    <section class="login-card-wrap">
+      <div class="login-card">
+        <p class="eyebrow">MASUK</p>
+        <h2>Selamat datang kembali</h2>
+        <p class="muted">Masuk sebagai mahasiswa, dosen, atau pemilik tenant.</p>
+        
+        <form id="loginForm" class="form-stack">
+          <label for="loginNpm">NPM / NIDN / Username</label>
+          <input id="loginNpm" type="text" autocomplete="username" placeholder="Contoh: 2026310001" required>
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" autocomplete="current-password" required>
+          <button class="primary-button" type="submit">Masuk</button>
+          <p class="form-message error" id="loginMessage" role="status" aria-live="polite"></p>
+        </form>
+        <p class="demo-hint">Akun demo (password <code>mdp12345</code>): mahasiswa <code>2026310001</code>, dosen <code>0011223344</code>, tenant <code>kedai.pempek</code>.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="app-shell" id="appShell" hidden>
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#dashboard" aria-label="MDP ONE beranda">
+        <span class="brand-mark">M</span>
+        <span><strong>MDP ONE</strong><small>Campus experience</small></span>
+      </a>
+
+      <div class="sidebar-label">MENU UTAMA</div>
+      <nav class="main-nav" aria-label="Navigasi utama"></nav>
+
+      <div class="sidebar-bottom">
+        <div class="demo-note"><strong>Prototype mode</strong><span>Data contoh, bukan data resmi kampus.</span></div>
+        <span class="sidebar-version">MDP ONE · Starter v1.3</span>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenuButton" type="button" aria-label="Buka menu">☰</button>
+        <div class="breadcrumb"><span>MDP ONE</span><span class="crumb-divider">/</span><strong id="currentPageLabel">Dashboard</strong></div>
+        <div class="topbar-actions">
+          <span class="demo-pill"><span class="status-dot"></span> Demo</span>
+          <div class="menu-wrap" id="inboxWrap" hidden>
+            <button class="icon-button inbox-button" id="inboxButton" type="button" aria-label="Pesan" aria-haspopup="true" aria-expanded="false" title="Pesan">✉<span class="badge inbox-badge" id="inboxBadge" hidden>0</span></button>
+            <div class="dropdown inbox-menu" id="inboxMenu" hidden>
+              <div class="dropdown-head"><strong>Pesan</strong><button class="text-button" id="inboxOpenAll" type="button">Buka semua</button></div>
+              <div class="inbox-list" id="inboxMenuList"></div>
+            </div>
+          </div>
+          <button class="icon-button" id="themeToggle" type="button" aria-label="Ganti tema" title="Ganti tema">◐</button>
+          <div class="menu-wrap" id="userWrap">
+            <button class="avatar" id="userButton" type="button" aria-haspopup="true" aria-expanded="false" title="Akun saya"><img id="userAvatar" alt="Foto profil"></button>
+            <div class="dropdown user-menu" id="userMenu" hidden>
+              <div class="user-menu-head">
+                <img class="avatar-img mahasiswa" id="userMenuAvatar" alt="">
+                <div><strong id="userMenuName">—</strong><small id="userMenuMeta">—</small><span class="role-tag mahasiswa">Mahasiswa</span></div>
+              </div>
+              <button class="menu-item" id="menuProfile" type="button">Edit profil</button>
+              <button class="menu-item danger" id="menuLogout" type="button">Keluar</button>
+            </div>
+          </div>
+          </div>
+      </header>
+
+      <div class="content-wrap">
+        <!-- ===================== DASHBOARD ===================== -->
+        <section class="page-section active" id="page-dashboard" aria-labelledby="dashboardTitle">
+          <div class="welcome-row">
+            <div>
+              <p class="eyebrow">SATU PINTU UNTUK AKTIVITAS KAMPUS</p>
+              <h1 id="dashboardTitle">Selamat datang, <span id="displayName">Mahasiswa MDP</span>!</h1>
+              <p class="muted">Jadwal, tugas, kehadiran, dan tagihan dari SPON dan Simponi dalam satu layar.</p>
+            </div>
+            <div class="date-chip" id="todayDate">Memuat tanggal...</div>
+          </div>
+
+          <div class="info-banner payment-banner" id="paymentBanner" hidden></div>
+
+          <div class="stats-grid four">
+            <article class="stat-card">
+              <span class="stat-icon blue">▤</span>
+              <div><span class="stat-label">Tugas &amp; kuis aktif</span><strong id="statTasks">—</strong></div>
+              <small id="statTasksMeta">dari SPON</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon teal">◒</span>
+              <div><span class="stat-label">Kehadiran</span><strong id="statAttendance">—</strong></div>
+              <small>rata-rata semester berjalan</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon purple">★</span>
+              <div><span class="stat-label">SKS lulus</span><strong id="statSks">—</strong></div>
+              <small id="statSksMeta">dari Simponi</small>
+            </article>
+            <article class="stat-card">
+              <span class="stat-icon orange">▦</span>
+              <div><span class="stat-label">Tagihan berikutnya</span><strong id="statPayment" class="stat-money">—</strong></div>
+              <small id="statPaymentMeta">dari Simponi</small>
+            </article>
+          </div>
+
+          <div class="dashboard-grid">
+            <article class="panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">HARI INI</p><h2>Jadwal kuliah</h2></div>
+                <span class="source-tag simponi">Simponi</span>
+              </div>
+              <div id="scheduleList" class="schedule-list"><p class="empty-state">Memuat jadwal...</p></div>
+            </article>
+
+            <article class="panel weather-panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">PALEMBANG</p><h2>Cuaca</h2></div>
+                <span class="mini-tag">Open-Meteo</span>
+              </div>
+              <div id="weatherNow"><p class="empty-state">Memuat cuaca...</p></div>
+              <div id="weatherForecast" class="forecast-strip"></div>
+            </article>
+          </div>
+
+          <div class="dashboard-grid second">
+            <article class="panel task-panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">DEADLINE TERDEKAT</p><h2>Tugas &amp; kuis</h2></div>
+                <span class="source-tag spon">SPON</span>
+              </div>
+              <div id="dashboardTaskList" class="compact-task-list"><p class="empty-state">Memuat tugas...</p></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">KALENDER</p><h2>Hari libur nasional</h2></div>
+                <span class="mini-tag" id="holidaySource">Memuat...</span>
+              </div>
+              <div id="holidayList" class="holiday-list"><p class="empty-state">Memuat hari libur...</p></div>
+            </article>
+          </div>
+
+          <article class="panel calendar-panel">
+            <div class="panel-heading">
+              <div><p class="eyebrow">UNIFIED ACADEMIC CALENDAR</p><h2>Kalender akademik</h2></div>
+              <span class="mini-tag">Data contoh</span>
+            </div>
+            <div id="academicCalendar" class="gcal"></div>
+          </article>
+
+          <div class="dashboard-grid second">
+            <article class="panel">
+              <div class="panel-heading">
+                <div><p class="eyebrow">ATTENDANCE OVERVIEW</p><h2>Rekap kehadiran</h2></div>
+                <span class="source-tag simponi">Simponi</span>
+              </div>
+              <p class="attendance-summary" id="attendanceSummary">Memuat ringkasan...</p>
+              <div id="attendanceList" class="attendance-list"><p class="empty-state">Memuat kehadiran...</p></div>
+            </article>
+              <article class="panel">
+              <div class="panel-heading"><div><p class="eyebrow">PENGUMUMAN</p><h2>Terbaru</h2></div></div>
+              <div id="announcementList" class="announcement-list"><p class="empty-state">Memuat pengumuman...</p></div>
+            </article>
+          </div>
+
+          <div class="info-banner"><span class="banner-icon">✦</span><div><strong>Data SPON dan Simponi pada halaman ini adalah data contoh.</strong><p>Integrasi resmi memerlukan persetujuan dan akses dari pengelola kedua sistem. Cuaca dan hari libur diambil dari API publik.</p></div></div>
+        </section>
+
+        <!-- ===================== CAMPUS CONNECTION ===================== -->
+        <section class="page-section" id="page-connection" aria-labelledby="connectionTitle" hidden>
+          <div class="page-heading"><p class="eyebrow">CAMPUS CONNECTION</p><h1 id="connectionTitle">Campus Talent Hub</h1><p class="muted">Temukan dosen untuk konsultasi, rekan untuk project, tim untuk lomba, dan mulai ngobrol dalam satu tempat.</p></div>
+          <nav class="conn-tabs" aria-label="Menu Campus Connection">
+            <button class="conn-tab active" data-tab="lecturers" type="button">Dosen</button>
+            <button class="conn-tab" data-tab="students" type="button">Mahasiswa</button>
+            <button class="conn-tab" data-tab="teams" type="button">Cari tim</button>
+            <button class="conn-tab" data-tab="chat" type="button">Chat<span class="badge" id="chatTabBadge" hidden>0</span></button>
+          </nav>
+          <div id="connRoot"></div>
+          <div id="chatRoot" hidden></div>
+        </section>
+
+        <!-- ===================== CAMPUS SERVICES ===================== -->
+        <section class="page-section" id="page-services" aria-labelledby="servicesTitle" hidden>
+          <div class="page-heading"><p class="eyebrow">CAMPUS SERVICES</p><h1 id="servicesTitle">Campus Services</h1><p class="muted">Rancangan layanan digital untuk membantu aktivitas sehari-hari mahasiswa.</p></div>
+          <div class="service-grid">
+            <div id="smartCanteenApp"></div>
+          </div>
+          <div class="info-banner"><span class="banner-icon">i</span><div><strong>Pembayaran dilakukan langsung di kasir tenant.</strong><p>Reservasi tersimpan di database dan dapat dilihat pemilik tenant secara langsung.</p></div></div>
+        </section>
+
+        <section class="page-section" id="page-dosen-dashboard" aria-label="Dashboard dosen" hidden></section>
+        <section class="page-section" id="page-dosen-services" aria-label="Campus Services dosen" hidden></section>
+
+        <footer class="footer"><span>© 2026 MDP ONE · Prototype akademik</span><span>Dibuat untuk demonstrasi JavaScript Full-Stack</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

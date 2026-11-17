@@ -1,0 +1,53 @@
+/**
+ * DATA CONTOH DOSEN — struktur dibuat mirip respons API supaya mudah diganti
+ * dengan fetch ke server/MySQL (cukup ubah getDosenDashboard di api.js).
+ * Semua nama dan angka adalah karangan.
+ */
+const BUILDING = 'Gedung IT Super Store';
+
+// day: 0 = Minggu ... 6 = Sabtu
+const schedule = [
+  { day: 1, start: '07:30', end: '09:10', code: 'IF0006', course: 'Pemrograman Dasar', kelas: 'IF11-A', room: 'Lab B605', building: BUILDING, students: 38 },
+  { day: 1, start: '13:00', end: '14:40', code: 'IF0002', course: 'Basis Data I', kelas: 'IF11-B', room: 'Lab B604', building: BUILDING, students: 36 },
+  { day: 2, start: '09:20', end: '11:00', code: 'IF0006', course: 'Pemrograman Dasar', kelas: 'IF11-B', room: 'Lab B605', building: BUILDING, students: 35 },
+  { day: 3, start: '10:00', end: '11:40', code: 'IF0002', course: 'Basis Data I', kelas: 'IF11-A', room: 'Lab B604', building: BUILDING, students: 38 },
+  { day: 3, start: '15:00', end: '16:40', code: 'IF0101', course: 'Rekayasa Perangkat Lunak', kelas: 'IF31-A', room: 'R. B302', building: BUILDING, students: 30 },
+  { day: 4, start: '08:00', end: '09:40', code: 'IF0101', course: 'Rekayasa Perangkat Lunak', kelas: 'IF31-B', room: 'R. B303', building: BUILDING, students: 32 },
+  { day: 5, start: '13:30', end: '15:10', code: 'IF0006', course: 'Pemrograman Dasar', kelas: 'IF11-A', room: 'Lab B605', building: BUILDING, students: 38 }
+];
+
+export const DOSEN_DATA = {
+  semester: { label: '2026/2027 Ganjil', totalMeetings: 16 },
+  schedule,
+  // Ringkasan tiap kelas yang diampu
+  classes: [
+    { code: 'IF0006', course: 'Pemrograman Dasar', kelas: 'IF11-A', students: 38, meeting: 9, attendance: 92.4 },
+    { code: 'IF0006', course: 'Pemrograman Dasar', kelas: 'IF11-B', students: 35, meeting: 9, attendance: 88.1 },
+    { code: 'IF0002', course: 'Basis Data I', kelas: 'IF11-A', students: 38, meeting: 8, attendance: 90.7 },
+    { code: 'IF0002', course: 'Basis Data I', kelas: 'IF11-B', students: 36, meeting: 8, attendance: 79.3 },
+    { code: 'IF0101', course: 'Rekayasa Perangkat Lunak', kelas: 'IF31-A', students: 30, meeting: 9, attendance: 94.0 },
+    { code: 'IF0101', course: 'Rekayasa Perangkat Lunak', kelas: 'IF31-B', students: 32, meeting: 9, attendance: 85.6 }
+  ],
+  // Antrean tindakan dosen. type: krs | ta | nilai. dueOffset = hari dari hari ini.
+  todos: [
+    { id: 't1', type: 'krs', title: 'Setujui KRS: Alya Putri Rahma', detail: '22 SKS · semester 1', dueOffset: 1 },
+    { id: 't2', type: 'krs', title: 'Setujui KRS: Rizky Ramadhan', detail: '24 SKS · semester 5', dueOffset: 1 },
+    { id: 't3', type: 'ta', title: 'Validasi judul TA: Sistem Rekomendasi Mata Kuliah', detail: 'Diajukan Fikri Maulana', dueOffset: 3 },
+    { id: 't4', type: 'nilai', title: 'Input nilai UTS Basis Data I (IF11-A)', detail: '38 mahasiswa belum dinilai', dueOffset: 2 },
+    { id: 't5', type: 'nilai', title: 'Input nilai UTS Pemrograman Dasar (IF11-B)', detail: '35 mahasiswa belum dinilai', dueOffset: 6 },
+    { id: 't6', type: 'ta', title: 'Tinjau bab 2 proposal TA: Sinta Maharani', detail: 'Revisi kedua', dueOffset: -1 }
+  ],
+  // Mahasiswa wali (Perwalian Akademik)
+  advisees: [
+    { npm: '2026310001', name: 'Alya Putri Rahma', prodi: 'Informatika', semester: 1, ipk: 3.62, status: 'Aktif' },
+    { npm: '2024310012', name: 'Rizky Ramadhan', prodi: 'Informatika', semester: 5, ipk: 3.41, status: 'Aktif' },
+    { npm: '2024310033', name: 'Bagas Prasetyo', prodi: 'Teknik Komputer', semester: 5, ipk: 2.58, status: 'Perlu perhatian' },
+    { npm: '2023310008', name: 'Fikri Maulana', prodi: 'Informatika', semester: 7, ipk: 3.12, status: 'Aktif' },
+    { npm: '2025310004', name: 'Kevin Wijaya', prodi: 'Informatika', semester: 3, ipk: 2.71, status: 'Perlu perhatian' }
+  ],
+  // Riwayat Berita Acara Perkuliahan (terbaru di atas)
+  bap: [
+    { dateOffset: -2, course: 'Basis Data I', kelas: 'IF11-A', topic: 'Normalisasi 1NF–3NF', metode: 'Tatap muka' },
+    { dateOffset: -3, course: 'Pemrograman Dasar', kelas: 'IF11-B', topic: 'Perulangan bersarang', metode: 'Tatap muka' }
+  ]
+};

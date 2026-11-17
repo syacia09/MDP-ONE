@@ -1,0 +1,52 @@
+/* Kartu direktori berukuran sama + modal + editor profil. Muat SETELAH theme.css. */
+
+/* ---- Kartu direktori ---- */
+.dir-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); grid-auto-rows: 1fr; gap: 16px; }
+.dir-card { display: flex; flex-direction: column; align-items: stretch; gap: 12px; cursor: default; padding: 18px; min-height: 0; }
+.dir-card .dir-top { align-items: center; }
+.dir-card .dir-top strong, .dir-card .dir-top small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dir-summary { display: flex; flex-direction: column; gap: 10px; flex: 1 1 auto; min-height: 0; }
+.dir-clamp { flex: none; margin: 0; font-size: 13px; line-height: 1.55; color: var(--text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.dir-chips { flex-wrap: wrap; }
+.dir-chips .chip { font-size: 12px; padding: 4px 10px; white-space: nowrap; }
+.chip-more { background: var(--surface-soft); color: var(--muted); border: 1px solid var(--border); }
+.dir-foot { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 12px; border-top: 1px solid var(--border); margin-top: auto; }
+.dir-foot .primary-button { margin: 0; }
+.dir-more { border: 0; background: transparent; color: var(--primary); font-weight: 700; font-size: 12px; padding: 6px 4px; border-radius: 6px; text-decoration: underline; text-underline-offset: 3px; }
+.dir-more:hover { background: var(--primary-soft); }
+@media (max-width: 760px) { .dir-grid { grid-auto-rows: auto; } }
+
+/* ---- Modal (detail profil & editor profil) ---- */
+.dir-modal { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; padding: 20px; background: rgba(30, 8, 14, .55); backdrop-filter: blur(2px); }
+.dir-modal-box { width: min(560px, 100%); max-height: min(86vh, 720px); display: flex; flex-direction: column; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: var(--radius-lg, 24px); box-shadow: var(--shadow-lg); overflow: hidden; }
+.dir-modal-head { display: flex; align-items: center; gap: 14px; padding: 18px 20px; border-bottom: 1px solid var(--border); }
+.dir-modal-head > div { flex: 1; min-width: 0; }
+.dir-modal-head strong, .dir-modal-head small { display: block; }
+.dir-modal-head small { color: var(--muted); font-size: 12px; margin-top: 3px; }
+.dir-modal-close { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text); font-size: 20px; line-height: 1; }
+.dir-modal-close:hover { background: var(--surface-soft); }
+.dir-modal-body { margin: 0; padding: 16px 20px; overflow-y: auto; border: 0; flex: 1; }
+.dir-modal-foot { display: flex; justify-content: flex-end; gap: 10px; padding: 14px 20px; border-top: 1px solid var(--border); }
+.dir-modal-foot .primary-button { margin: 0; }
+
+/* ---- Editor profil ---- */
+.pf-box { width: min(680px, 100%); }
+.pf-body { padding: 18px 20px; overflow-y: auto; flex: 1; display: grid; gap: 14px; align-content: start; }
+.pf-photo { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.pf-photo .avatar-img.big { flex: none; }
+.pf-photo-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pf-photo-btns .secondary-button, .pf-box .dir-modal-foot .secondary-button { padding: 10px 16px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); font-weight: 700; font-size: 12px; }
+.pf-field { display: grid; gap: 6px; }
+.pf-label { font-size: 12px; font-weight: 700; color: var(--muted); }
+.pf-hint { color: var(--muted); font-size: 11px; }
+.pf-field input, .pf-field textarea, .pf-row input { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--text); font: inherit; font-size: 14px; }
+.pf-field textarea { resize: vertical; min-height: 96px; }
+.pf-check { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+.pf-check input { width: 18px; height: 18px; accent-color: var(--primary); }
+.pf-sec h4 { margin: 4px 0 8px; font-size: 12px; text-transform: uppercase; letter-spacing: .5px; color: var(--muted); }
+.pf-rows { display: grid; gap: 8px; }
+.pf-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 10px; border: 1px solid var(--border); border-radius: 12px; background: var(--surface-soft); }
+.pf-row input { width: auto; min-width: 0; }
+.pf-del { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--coral, #c0392b); font-size: 18px; line-height: 1; flex: none; }
+.pf-add { margin-top: 8px; border: 1px dashed var(--primary); background: transparent; color: var(--primary); font-weight: 700; font-size: 12px; padding: 8px 12px; border-radius: 10px; }
+.pf-add:hover { background: var(--primary-soft); }

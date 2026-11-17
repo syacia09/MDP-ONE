@@ -1,0 +1,13 @@
+/* Bar filter berderet (direktori dan kantin). Muat setelah dosen.css. */
+.filter-bar { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+.filter-bar > .dir-search { flex: 1 1 240px; min-width: 200px; max-width: none; height: 42px; margin-bottom: 0; }
+.filter-bar > select { flex: 0 1 170px; min-width: 130px; height: 42px; padding: 0 12px; border: 1.5px solid var(--border); border-radius: 12px; background: var(--surface); color: var(--text); font: inherit; font-size: 13px; }
+.filter-toggle, .filter-reset { height: 42px; padding: 0 16px; border: 1.5px solid var(--border); border-radius: 99px; background: var(--surface); color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
+.filter-toggle:hover, .filter-reset:hover { border-color: var(--primary); color: var(--primary); }
+.filter-toggle.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+.filter-count { margin-left: auto; font-size: 12px; color: var(--muted); white-space: nowrap; }
+.tenant-status-bar { display: flex; flex-wrap: wrap; gap: 14px; margin: 4px 0 0; font-size: 13px; font-weight: 700; }
+.status-open { color: var(--green, #4c8a63); }
+.status-closed { color: var(--muted); }
+.dosen-canteen { margin-bottom: 28px; }
+@media (max-width: 760px) { .filter-bar > select { flex: 1 1 45%; } }
