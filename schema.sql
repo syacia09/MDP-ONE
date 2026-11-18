@@ -87,3 +87,49 @@ CREATE TABLE IF NOT EXISTS team_applicants (
   FOREIGN KEY (team_id) REFERENCES teams(id) ON DELETE CASCADE,
   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
+
+-- ===== Dosen: kelas, jadwal, presensi, BAP, antrean validasi, mahasiswa wali =====
+CREATE TABLE IF NOT EXISTS classes (
+  id INT AUTO_INCREMENT PRIMARY KEY, lecturer_id INT NOT NULL,
+  code VARCHAR(12) NOT NULL, course VARCHAR(80) NOT NULL, kelas VARCHAR(12) NOT NULL,
+  room VARCHAR(30), building VARCHAR(60),
+  students SMALLINT NOT NULL DEFAULT 0, meeting TINYINT NOT NULL DEFAULT 0, total_meetings TINYINT NOT NULL DEFAULT 16,
+  attendance DECIMAL(4,1) NOT NULL DEFAULT 0,
+  FOREIGN KEY (lecturer_id) REFERENCES users(id) ON DELETE CASCADE, INDEX (lecturer_id)
+);
+CREATE TABLE IF NOT EXISTS class_slots (
+  id INT AUTO_INCREMENT PRIMARY KEY, class_id INT NOT NULL,
+  weekday TINYINT NOT NULL, start_time TIME NOT NULL, end_time TIME NOT NULL,   -- weekday: 0 = Minggu ... 6 = Sabtu
+  FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS attendance_sessions (
+  id INT AUTO_INCREMENT PRIMARY KEY, class_id INT NOT NULL,
+  code CHAR(6) NOT NULL, opened_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  expires_at DATETIME NOT NULL, closed_at DATETIME NULL,
+  FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE, INDEX (code, closed_at)
+);
+CREATE TABLE IF NOT EXISTS attendance_records (
+  session_id INT NOT NULL, user_id INT NOT NULL, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (session_id, user_id),
+  FOREIGN KEY (session_id) REFERENCES attendance_sessions(id) ON DELETE CASCADE,
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS bap (
+  id INT AUTO_INCREMENT PRIMARY KEY, class_id INT NOT NULL,
+  topic VARCHAR(120) NOT NULL, method VARCHAR(20) NOT NULL, note VARCHAR(300),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (class_id) REFERENCES classes(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS todos (
+  id INT AUTO_INCREMENT PRIMARY KEY, lecturer_id INT NOT NULL,
+  type ENUM('krs','ta','nilai') NOT NULL, title VARCHAR(160) NOT NULL, detail VARCHAR(160),
+  due_date DATE NOT NULL, done_at DATETIME NULL,
+  FOREIGN KEY (lecturer_id) REFERENCES users(id) ON DELETE CASCADE, INDEX (lecturer_id, done_at)
+);
+CREATE TABLE IF NOT EXISTS advisees (
+  lecturer_id INT NOT NULL, student_id INT NOT NULL,
+  ipk DECIMAL(3,2) NOT NULL, status VARCHAR(20) NOT NULL DEFAULT 'Aktif',
+  PRIMARY KEY (lecturer_id, student_id),
+  FOREIGN KEY (lecturer_id) REFERENCES users(id) ON DELETE CASCADE,
+  FOREIGN KEY (student_id) REFERENCES users(id) ON DELETE CASCADE
+);
